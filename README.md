@@ -1,4 +1,5 @@
-# mern_shopping_list
+# REACT REDUX SHOPPING LIST APP
+//mern_shopping_list
 Refresher on React-Redux using 
 #Traversy_media's very own youtube + udemy tutorials
 //To run both client and server side, we used concurrently in the server package json.
