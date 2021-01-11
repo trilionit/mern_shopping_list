@@ -8,12 +8,21 @@ const Item= require("../../models/Item");
 //@DESC Get all Items
 //@access Public
 
-router.get("/", (req, res)=>{
-    Item.find()
-        .then(items=>{
-            let allItems= res.json(items);
-            res.send(allItems);
-        });
+router.get("/", async (req, res)=>{
+    // Item.find()
+    //     .then(items=>{
+    //         let allItems= res.json(items.data);
+    //         console.log(allItems);
+    //         //res.send(allItems);
+    //     });
+    const allItems = await Item.find({})
+
+    try {
+        res.send(allItems);
+        console.log(allItems);
+    } catch(err) {
+        res.status(500).send(err);
+    }
     console.log("items route reached...");
 })
 
